@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .ejercicio {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .ejercicio h2 {
+            color: #555;
+            margin-top: 0;
+        }
+
+        .ejercicio p {
+            margin-bottom: 10px;
+        }
+
+        #resultados {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicios JavaScript</h1>
+
+    <div class="ejercicio">
+        <h2>1. Declara variables con tu nombre, edad y ciudad usando let y const.</h2>
+        <p>Resultado:</p>
+        <div id="resultado1"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>2. Crea variables de diferentes tipos: string, number, boolean, null y undefined.</h2>
+        <p>Resultado:</p>
+        <div id="resultado2"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>3. Convierte un string numérico a número y viceversa.</h2>
+        <p>Resultado:</p>
+        <div id="resultado3"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>4. Crea una calculadora simple que sume, reste, multiplique y divida dos números.</h2>
+        <p>Introduce dos números:</p>
+        <input type="number" id="num1">
+        <input type="number" id="num2">
+        <button onclick="calcular()">Calcular</button>
+        <div id="resultado4"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>5. Calcula el área de un círculo dado su radio (usa Math.PI).</h2>
+        <p>Introduce el radio del círculo:</p>
+        <input type="number" id="radio">
+        <button onclick="calcularArea()">Calcular Área</button>
+        <div id="resultado5"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>6. Determina si un número es par o impar usando el operador módulo (%).</h2>
+        <p>Introduce un número:</p>
+        <input type="number" id="numeroParImpar">
+        <button onclick="parImpar()">Determinar</button>
+        <div id="resultado6"></div>
+    </div>
+
+     <div class="ejercicio">
+        <h2>7. Verifica si un número es positivo, negativo o cero.</h2>
+        <p>Introduce un número:</p>
+        <input type="number" id="numeroPosNegCero">
+        <button onclick="posNegCero()">Verificar</button>
+        <div id="resultado7"></div>
+    </div>
+
+     <div class="ejercicio">
+        <h2>8. Determina si una persona es mayor de edad (18 años o más).</h2>
+        <p>Introduce tu edad:</p>
+        <input type="number" id="edadMayorEdad">
+        <button onclick="mayorEdad()">Verificar</button>
+        <div id="resultado8"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>9. Crea un programa que determine el día de la semana según un número del 1 al 7.</h2>
+        <p>Introduce un número (1-7):</p>
+        <input type="number" id="diaSemana">
+        <button onclick="diaDeLaSemana()">Verificar</button>
+        <div id="resultado9"></div>
+    </div>
+
+     <div class="ejercicio">
+        <h2>10. Verifica si un año es bisiesto.</h2>
+        <p>Introduce un año:</p>
+        <input type="number" id="anoBisiesto">
+        <button onclick="esBisiesto()">Verificar</button>
+        <div id="resultado10"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>11. Imprime los números del 1 al 10 usando un bucle for.</h2>
+        <p>Resultado:</p>
+        <div id="resultado11"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>12. Imprime los números pares del 0 al 20.</h2>
+        <p>Resultado:</p>
+        <div id="resultado12"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>13. Crea una tabla de multiplicar de un número dado.</h2>
+        <p>Introduce un número para la tabla de multiplicar:</p>
+        <input type="number" id="numeroTablaMultiplicar">
+        <button onclick="tablaMultiplicar()">Generar Tabla</button>
+        <div id="resultado13"></div>
+    </div>
+
+     <div class="ejercicio">
+        <h2>14. Suma todos los números del 1 al 100.</h2>
+        <p>Resultado:</p>
+        <div id="resultado14"></div>
+    </div>
+
+     <div class="ejercicio">
+        <h2>15. Imprime un patrón de asteriscos en forma de triángulo.</h2>
+        <p>Resultado:</p>
+        <div id="resultado15"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>16. Cuenta cuántas vocales tiene una palabra.</h2>
+        <p>Introduce una palabra:</p>
+        <input type="text" id="palabraVocales">
+        <button onclick="contarVocales()">Contar Vocales</button>
+        <div id="resultado16"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>17. Invierte una cadena de texto (ejemplo: "hola" → "aloh").</h2>
+        <p>Introduce una cadena de texto:</p>
+        <input type="text" id="cadenaInvertir">
+        <button onclick="invertirCadena()">Invertir Cadena</button>
+        <div id="resultado17"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>18. Verifica si una palabra es un palíndromo.</h2>
+        <p>Introduce una palabra:</p>
+        <input type="text" id="palabraPalindromo">
+        <button onclick="esPalindromo()">Verificar Palíndromo</button>
+        <div id="resultado18"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>19. Convierte la primera letra de cada palabra a mayúscula.</h2>
+        <p>Introduce una frase:</p>
+        <input type="text" id="fraseMayusculas">
+        <button onclick="primeraMayuscula()">Convertir</button>
+        <div id="resultado19"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>20. Cuenta cuántas palabras tiene una frase.</h2>
+        <p>Introduce una frase:</p>
+        <input type="text" id="fraseContarPalabras">
+        <button onclick="contarPalabras()">Contar Palabras</button>
+        <div id="resultado20"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>21. Crea un array con 5 números y muestra el mayor y el menor.</h2>
+        <p>Resultado:</p>
+        <div id="resultado21"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>22. Suma todos los elementos de un array.</h2>
+        <p>Resultado:</p>
+        <div id="resultado22"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>23. Crea un nuevo array con el doble de cada número de un array original.</h2>
+        <p>Resultado:</p>
+        <div id="resultado23"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>24. Elimina los elementos duplicados de un array.</h2>
+        <p>Resultado:</p>
+        <div id="resultado24"></div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>25. Ordena un array de números de menor a mayor.</h2>
+        <p>Resultado:</p>
+        <div id="resultado25"></div>
+    </div>
+
+
+
+    <script>
+        // Ejercicio 1
+        let nombre = "Percy Apaza Huañapaco";
+        const edad = 38;
+        const ciudad = "La Paz - Bolivia";
+        document.getElementById("resultado1").innerHTML = `Nombre: ${nombre}, Edad: ${edad}, Ciudad: ${ciudad}`;
+
+        // Ejercicio 2
+        let cadena = "Hola";
+        let numero = 10;
+        let booleano = true;
+        let nulo = null;
+        let indefinido = undefined;
+        document.getElementById("resultado2").innerHTML = `Cadena: ${cadena}, Número: ${numero}, Booleano: ${booleano}, Nulo: ${nulo}, Indefinido: ${indefinido}`;
+
+        // Ejercicio 3
+        function convertirStringNumero() {
+            let stringNumero = "42";
+            let numeroConvertido = Number(stringNumero);
+            let numeroOriginal = 77;
+            let stringConvertido = String(numeroOriginal);
+            document.getElementById("resultado3").innerHTML = `String a Número: ${numeroConvertido}, Número a String: ${stringConvertido}`;
+        }
+        convertirStringNumero();
+
+
+        // Ejercicio 4
+        function calcular() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let suma = num1 + num2;
+            let resta = num1 - num2;
+            let multiplicacion = num1 * num2;
+            let division = num1 / num2;
+            document.getElementById("resultado4").innerHTML = `Suma: ${suma}, Resta: ${resta}, Multiplicación: ${multiplicacion}, División: ${division}`;
+        }
+
+        // Ejercicio 5
+        function calcularArea() {
+            let radio = parseFloat(document.getElementById("radio").value);
+            let area = Math.PI * radio * radio;
+            document.getElementById("resultado5").innerHTML = `El área del círculo es: ${area}`;
+        }
+
+        // Ejercicio 6
+        function parImpar() {
+            let numero = parseInt(document.getElementById("numeroParImpar").value);
+            let resultado = (numero % 2 === 0) ? "par" : "impar";
+            document.getElementById("resultado6").innerHTML = `El número es ${resultado}`;
+        }
+
+        // Ejercicio 7
+        function posNegCero() {
+            let numero = parseFloat(document.getElementById("numeroPosNegCero").value);
+            let resultado;
+            if (numero > 0) {
+                resultado = "positivo";
+            } else if (numero < 0) {
+                resultado = "negativo";
+            } else {
+                resultado = "cero";
+            }
+            document.getElementById("resultado7").innerHTML = `El número es ${resultado}`;
+        }
+
+        // Ejercicio 8
+        function mayorEdad() {
+            let edad = parseInt(document.getElementById("edadMayorEdad").value);
+            let resultado = (edad >= 18) ? "mayor de edad" : "menor de edad";
+            document.getElementById("resultado8").innerHTML = `Eres ${resultado}`;
+        }
+
+        // Ejercicio 9
+        function diaDeLaSemana() {
+            let numero = parseInt(document.getElementById("diaSemana").value);
+            let dia;
+            switch (numero) {
+                case 1: dia = "Lunes"; break;
+                case 2: dia = "Martes"; break;
+                case 3: dia = "Miércoles"; break;
+                case 4: dia = "Jueves"; break;
+                case 5: dia = "Viernes"; break;
+                case 6: dia = "Sábado"; break;
+                case 7: dia = "Domingo"; break;
+                default: dia = "Número inválido";
+            }
+            document.getElementById("resultado9").innerHTML = `El día es ${dia}`;
+        }
+
+        // Ejercicio 10
+        function esBisiesto() {
+            let ano = parseInt(document.getElementById("anoBisiesto").value);
+            let resultado = (ano % 4 === 0 && (ano % 100 !== 0 || ano % 400 === 0)) ? "bisiesto" : "no bisiesto";
+            document.getElementById("resultado10").innerHTML = `El año es ${resultado}`;
+        }
+
+        // Ejercicio 11
+        let numeros1a10 = "";
+        for (let i = 1; i <= 10; i++) {
+            numeros1a10 += i + " ";
+        }
+        document.getElementById("resultado11").innerHTML = numeros1a10;
+
+        // Ejercicio 12
+        let numerosPares = "";
+        for (let i = 0; i <= 20; i += 2) {
+            numerosPares += i + " ";
+        }
+        document.getElementById("resultado12").innerHTML = numerosPares;
+
+        // Ejercicio 13
+        function tablaMultiplicar() {
+            let numero = parseInt(document.getElementById("numeroTablaMultiplicar").value);
+            let tabla = "";
+            for (let i = 1; i <= 10; i++) {
+                tabla += `${numero} x ${i} = ${numero * i}<br>`;
+            }
+            document.getElementById("resultado13").innerHTML = tabla;
+        }
+
+        // Ejercicio 14
+        let suma1a100 = 0;
+        for (let i = 1; i <= 100; i++) {
+            suma1a100 += i;
+        }
+        document.getElementById("resultado14").innerHTML = `La suma es: ${suma1a100}`;
+
+        // Ejercicio 15
+        let trianguloAsteriscos = "";
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= i; j++) {
+                trianguloAsteriscos += "*";
+            }
+            trianguloAsteriscos += "<br>";
+        }
+        document.getElementById("resultado15").innerHTML = trianguloAsteriscos;
+
+        // Ejercicio 16
+        function contarVocales() {
+            let palabra = document.getElementById("palabraVocales").value.toLowerCase();
+            let contador = 0;
+            for (let i = 0; i < palabra.length; i++) {
+                if (palabra[i] === 'a' || palabra[i] === 'e' || palabra[i] === 'i' || palabra[i] === 'o' || palabra[i] === 'u') {
+                    contador++;
+                }
+            }
+            document.getElementById("resultado16").innerHTML = `La palabra tiene ${contador} vocales.`;
+        }
+
+        // Ejercicio 17
+        function invertirCadena() {
+            let cadena = document.getElementById("cadenaInvertir").value;
+            let cadenaInvertida = cadena.split("").reverse().join("");
+            document.getElementById("resultado17").innerHTML = `Cadena invertida: ${cadenaInvertida}`;
+        }
+
+        // Ejercicio 18
+        function esPalindromo() {
+            let palabra = document.getElementById("palabraPalindromo").value.toLowerCase().replace(/ /g, "");
+            let palabraInvertida = palabra.split("").reverse().join("");
+            let resultado = (palabra === palabraInvertida) ? "es un palíndromo" : "no es un palíndromo";
+            document.getElementById("resultado18").innerHTML = `La palabra ${resultado}`;
+        }
+
+        // Ejercicio 19
+        function primeraMayuscula() {
+            let frase = document.getElementById("fraseMayusculas").value;
+            let palabras = frase.split(" ");
+            let fraseConvertida = "";
+            for (let i = 0; i < palabras.length; i++) {
+                fraseConvertida += palabras[i].charAt(0).toUpperCase() + palabras[i].slice(1) + " ";
+            }
+            document.getElementById("resultado19").innerHTML = `Frase convertida: ${fraseConvertida.trim()}`;
+        }
+
+        // Ejercicio 20
+        function contarPalabras() {
+            let frase = document.getElementById("fraseContarPalabras").value;
+            let palabras = frase.split(" ").filter(function(palabra) {
+                return palabra !== "";
+            });
+            document.getElementById("resultado20").innerHTML = `La frase tiene ${palabras.length} palabras.`;
+        }
+
+        // Ejercicio 21
+        let numerosArray = [5, 2, 9, 1, 5];
+        let mayor = Math.max(...numerosArray);
+        let menor = Math.min(...numerosArray);
+        document.getElementById("resultado21").innerHTML = `Array: [${numerosArray}], Mayor: ${mayor}, Menor: ${menor}`;
+
+        // Ejercicio 22
+        let numerosParaSumar = [1, 2, 3, 4, 5];
+        let sumaArray = numerosParaSumar.reduce((a, b) => a + b, 0);
+        document.getElementById("resultado22").innerHTML = `Array: [${numerosParaSumar}], Suma: ${sumaArray}`;
+
+        // Ejercicio 23
+        let numerosOriginales = [1, 2, 3, 4, 5];
+        let numerosDobles = numerosOriginales.map(numero => numero * 2);
+        document.getElementById("resultado23").innerHTML = `Array Original: [${numerosOriginales}], Array con el doble: [${numerosDobles}]`;
+
+        // Ejercicio 24
+        let numerosDuplicados = [2, 2, 2, 2, 4, 4, 5];
+        let numerosSinDuplicados = [...new Set(numerosDuplicados)];
+        document.getElementById("resultado24").innerHTML = `Array Original: [${numerosDuplicados}], Array sin duplicados: [${numerosSinDuplicados}]`;
+
+        // Ejercicio 25
+        let numerosDesordenados = [8, 4, 3, 1, 9];
+        let num = [8, 4, 3, 1, 9];
+        let numerosOrdenados = numerosDesordenados.sort((a, b) => a - b);
+        document.getElementById("resultado25").innerHTML = `Array Desordenado: [${num}], Array Ordenado: [${numerosOrdenados}]`;
+    </script>
+</body>
+</html>
